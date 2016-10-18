@@ -6,33 +6,15 @@ namespace ConsoleApplication
 
     public interface Automobile
     {
-        ExhaustType Drive<FuelType,ExhaustType>(FuelType fuel);
+        ExhaustType Drive<FuelType,ExhaustType>(FuelType fuel);where ExhaustType : new();
     }
     public interface Fuel
     {
         ExhaustType consume<ExhaustType>() where ExhaustType : new();
     }
-    // public interface Exhaust1
-    // {
-    //     void emit();
-    // }
 
-    // public class UnleadedGasoline : Fuel
-    // {
-    //     Exhaust Fuel.consume<Exhaust>() 
-    //     {
-    //         Console.WriteLine("...consuming unleaded gas...");
-    //         return new Exhaust();
-    //     }
-    // }
-
-    public class UnleadedGasoline: Fuel 
+    public class UnleadedGasoline : Fuel
     {
-        // public Exhaust consume() 
-        // {
-        //     Console.WriteLine("...consuming unleaded gas...");
-        //     return new Exhaust();
-        // }
         public Exhaust consume<Exhaust>() where Exhaust : new()
         {
             Console.WriteLine("...consuming unleaded gas...");
@@ -42,11 +24,9 @@ namespace ConsoleApplication
 
     public class Car2 : Automobile
     {
-
-
-        public CleanExhaust Drive<UnleadedGasoline, CleanExhaust>(UnleadedGasoline fuel)
+        public CleanExhaust Drive<UnleadedGasoline, CleanExhaust>(UnleadedGasoline fuel) where CleanExhaust : new()
         {
-            return fuel.consume<CleanExhaust>();
+            return  (fuel as Fuel).consume<CleanExhaust>();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace ConsoleApplication
         public CleanExhaust () {}
         public void emit()
         {
-            Console.WriteLine("...this is some clean exhaust...")
+            Console.WriteLine("...this is some clean exhaust...");
         }
     }
     public class Car : Automobile<UnleadedGasoline<CleanExhaust>, CleanExhaust>
