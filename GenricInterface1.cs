@@ -6,7 +6,7 @@ namespace ConsoleApplication
 
     public interface Automobile
     {
-        ExhaustType Drive<FuelType,ExhaustType>(FuelType fuel);where ExhaustType : new();
+        ExhaustType Drive<FuelType,ExhaustType>(FuelType fuel) where ExhaustType : new();
     }
     public interface Fuel
     {

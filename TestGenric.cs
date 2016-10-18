@@ -8,16 +8,16 @@ using System.Text.RegularExpressions;
 
 namespace ConsoleApplication
 {
-    public class Program
+    public class TestGenric
     {
-        public static void Main(string[] args)
-        {
-            var fuelImp = new FuelImp<CleanExhaust>();
-            var car = new Car();
-            var easyCar = new EasyCar();
-            car.drive(fuelImp);
-            easyCar.drive(fuelImp);
-        }
+        // public static void Main(string[] args)
+        // {
+        //     var fuelImp = new FuelImp<CleanExhaust>();
+        //     var car = new Car();
+        //     var easyCar = new EasyCar();
+        //     car.drive(fuelImp);
+        //     easyCar.drive(fuelImp);
+        // }
 
         public interface Automobile<F, E>
         {
