@@ -14,7 +14,7 @@ namespace ConsoleApplication
     }
     public interface Exhaust 
     {
-        void emit();
+        void Emit();
     }
 
     public class UnleadedGasoline<Exhaust> : Fuel<Exhaust> where Exhaust : new()
@@ -28,7 +28,7 @@ namespace ConsoleApplication
     public class CleanExhaust : Exhaust
     {
         public CleanExhaust () {}
-        public void emit()
+        public void Emit()
         {
             Console.WriteLine("...this is some clean exhaust...");
         }
