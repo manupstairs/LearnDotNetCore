@@ -27,7 +27,6 @@ namespace ConsoleApplication
     }
     public class CleanExhaust : Exhaust
     {
-        public CleanExhaust () {}
         public void Emit()
         {
             Console.WriteLine("...this is some clean exhaust...");
